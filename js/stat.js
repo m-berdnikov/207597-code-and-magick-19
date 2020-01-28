@@ -22,12 +22,12 @@ var TEXT_COLOR = '#000000';
 
 var textX = CLOUD_X + (BAR_GAP >> 1);
 
-var renderCloud = function (ctx, x, y, color) {
+function renderCloud(ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
-};
+}
 
-var getMaxElement = function (arr) {
+function getMaxElement(arr) {
   var maxElement = arr[0];
   for (var i = 1; i < arr.length; i++) {
     if (arr[i] > maxElement) {
@@ -35,15 +35,15 @@ var getMaxElement = function (arr) {
     }
   }
   return maxElement;
-};
+}
 
-var getBlueColor = function () {
+function getBlueColor() {
   return 'hsl(239, ' + Math.floor(Math.random() * 100) + '%, 50%)';
-};
+}
 
-var getRandomBar = function (ctx, x, y) {
+function getRandomBar(ctx, x, y) {
   ctx.fillRect(x, BAR_Y - y, BAR_WIDTH, y);
-};
+}
 
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + SHADOW_GAP, CLOUD_Y + SHADOW_GAP, SHADOW_COLOR);
