@@ -63,8 +63,8 @@ function renderWizard(wizard) {
 
 wizards = createWizards(WIZARDS_NUMBERS);
 
-// setupBlock.classList.remove('hidden');
-// setupSimilarBlock.classList.remove('hidden');
+setupBlock.classList.remove('hidden');
+setupSimilarBlock.classList.remove('hidden');
 
 var fragment = document.createDocumentFragment();
 
