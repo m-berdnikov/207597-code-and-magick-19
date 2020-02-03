@@ -80,7 +80,9 @@ function renderWizard(wizard) {
 
 function openSetupEscPressHandler(evt) {
   if (evt.key === ESC_KEY) {
-    closeSetup();
+    if (document.activeElement !== userNameInput) {
+      closeSetup();
+    }
   }
 }
 
@@ -145,6 +147,3 @@ userWizardEyes.addEventListener('click', function () {
 userWizardFireball.addEventListener('click', function () {
   changeUserColor(userWizardFireball, userWizardFireballInput, getRandomFireballColor());
 });
-
-
-userNameInput.addEventListener('click', openSetupEscPressHandler, false);
